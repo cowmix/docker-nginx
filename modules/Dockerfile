@@ -74,6 +74,6 @@ RUN --mount=type=bind,target=/tmp/packages/,source=/tmp/packages/,from=builder \
     apt-get update \
     && . /tmp/packages/modules.env \
     && for module in $BUILT_MODULES; do \
-           apt-get install --no-install-suggests --no-install-recommends -y /tmp/packages/nginx-module-${module}_${NGINX_VERSION}*.deb; \
+           apt-get install --no-install-suggests --no-install-recommends -y /tmp/packages/nginx-module-*.deb; \
        done \
     && rm -rf /var/lib/apt/lists/
